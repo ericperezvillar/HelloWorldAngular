@@ -8,6 +8,7 @@ import { app_routing } from './app.routes';
 
 // Services
 import { InformationService } from "./services/information.service";
+import { ProductService } from './services/product.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -34,7 +35,8 @@ import { importType } from '@angular/compiler/src/output/output_ast';
     app_routing
   ],
   providers: [
-    InformationService
+    InformationService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
