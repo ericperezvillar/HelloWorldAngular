@@ -3,8 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// Routes
 import { app_routing } from './app.routes';
 
+// Services
+import { InformationService } from "./services/information.service";
+
+// Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -28,7 +33,9 @@ import { importType } from '@angular/compiler/src/output/output_ast';
     HttpModule,
     app_routing
   ],
-  providers: [],
+  providers: [
+    InformationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
