@@ -5,16 +5,19 @@ import { Injectable } from '@angular/core';
 export class ProductService {
 
   products:any[] = [];
+  loading:boolean = true;
 
   constructor(private http: Http) { 
     this.load_products();
   }
 
   public load_products(){
+    this.loading = true;
+
     this.http.get("https://my-first-portfolio-e1d1e.firebaseio.com/product_idx.json")
             .subscribe(data => {
                 this.products = data.json();
-
+                this.loading = false;
             });
   }
 
