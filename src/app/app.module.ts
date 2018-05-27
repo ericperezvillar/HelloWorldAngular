@@ -18,6 +18,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { importType } from '@angular/compiler/src/output/output_ast';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { importType } from '@angular/compiler/src/output/output_ast';
     FooterComponent,
     PortfolioComponent,
     AboutComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

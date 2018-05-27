@@ -1,3 +1,4 @@
+import { ProductService } from '../../services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 
@@ -8,13 +9,29 @@ import { Component } from '@angular/core';
 })
 export class ProductItemComponent {
 
-  constructor( private route:ActivatedRoute) {
-    this.route.params.subscribe( parameters => {
-      console.log(parameters);
-      console.log(parameters['cod']);
+  cod:string;
+  productDetail: any = undefined;
 
-    })
+  constructor( private route:ActivatedRoute,
+              private _ps: ProductService) {
+      this.route.params.subscribe( parameters => {
+        this.cod = parameters['cod'];
+  
+      })
+     
+      this.getProductDetail(this.cod);         
    }
+
+    public getProductDetail(code:string){
+        
+      if(this.productDetail == undefined)
+      {
+          this._ps.load_product_detail(this.cod ).subscribe(prodDetail =>{
+            this.productDetail = prodDetail.json();
+            console.log(this.productDetail);
+        }); 
+      }
+    }
 
 
 }

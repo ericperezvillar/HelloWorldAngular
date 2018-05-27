@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AboutComponent, 
     PortfolioComponent, 
-    ProductItemComponent } from './components/index.pages';
+    ProductItemComponent,
+    SearchComponent } from './components/index.pages';
 
 const routes: Routes = [
     { path: 'home', component: PortfolioComponent },
     { path: 'about', component: AboutComponent },
     { path: 'product/:cod', component: ProductItemComponent },
-    { path: '**', pathMatch: 'full', redirectTo: 'home' }
+    { path: 'search/:term', component: SearchComponent },
+    { path: '**', pathMatch: 'full', redirectTo: 'home' }   
 ];
 
 @NgModule({
