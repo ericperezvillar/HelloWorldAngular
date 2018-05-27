@@ -28,7 +28,6 @@ export class ProductItemComponent {
       {
           this._ps.load_product_detail(this.cod ).subscribe(prodDetail =>{
             this.productDetail = prodDetail.json();
-            console.log(this.productDetail);
         }); 
       }
     }
